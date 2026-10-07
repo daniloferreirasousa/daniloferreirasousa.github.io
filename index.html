@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danilo Ferreira | Systems & Backend Engineer</title>
+    <!-- Tailwind CSS para estilização rápida -->
+    <script src="https://jsdelivr.net"></script>
+    <style>
+        /* Estética terminal/hacker sutil */
+        .glow-orange:hover {
+            box-shadow: 0 0 15px rgba(249, 115, 22, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100 font-mono antialiased selection:bg-orange-500 selection:text-white">
+
+    <!-- HEADER / HERO SECTION -->
+    <header class="max-w-4xl mx-auto px-6 pt-20 pb-12 border-b border-zinc-800">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div>
+                <h1 class="text-3xl font-bold tracking-tight text-white mb-2">Danilo Ferreira Sousa</h1>
+                <p class="text-orange-500 font-medium mb-4 text-sm md:text-base">
+                    Systems & Backend Engineer // Instrutor de TI na Firjan SENAI
+                </p>
+                <p class="text-zinc-400 max-w-xl text-sm leading-relaxed">
+                    Desenvolvedor focado em sistemas de baixo nível, privacidade e segurança. 
+                    Acredito que o software moderno deve ser veloz, privado e livre de dependências desnecessárias de nuvem centralizada.
+                </p>
+            </div>
+            <!-- Links rápidos -->
+            <div class="flex flex-col gap-2 text-xs text-zinc-400 bg-zinc-900/50 p-4 rounded-lg border border-zinc-800 md:min-w-[200px]">
+                <span class="text-zinc-500 uppercase tracking-widest text-[10px] font-bold">Contato</span>
+                <a href="https://linkedin.com/damiloferreirasousa" target="_blank" class="hover:text-orange-400 transition-colors">➔ LinkedIn</a>
+                <a href="https://github.com" target="_blank" class="hover:text-orange-400 transition-colors">➔ GitHub Perfil</a>
+                <a href="mailto:daniloasf@outlook.com" class="hover:text-orange-400 transition-colors">➔ E-mail</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN PORTFOLIO -->
+    <main class="max-w-4xl mx-auto px-6 py-12 space-y-16">
+
+        <!-- PROJETO EM DESTAQUE (CASE) -->
+        <section class="space-y-6">
+            <div class="flex items-center gap-2">
+                <span class="text-orange-500 font-bold">#</span>
+                <h2 class="text-xl font-bold text-white uppercase tracking-wider">Projeto em Destaque</h2>
+            </div>
+            
+            <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6 glow-orange transition-all duration-300">
+                <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl">🦀</span>
+                        <h3 class="text-lg font-bold text-white">CrabAI</h3>
+                    </div>
+                    <span class="px-2 py-1 text-[10px] uppercase font-bold tracking-wider bg-orange-500/10 text-orange-400 rounded border border-orange-500/20">
+                        Rust / egui / Ollama
+                    </span>
+                </div>
+                <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+                    Sistema de IA local, completamente offline e de alta performance. Desenvolvido nativamente em Rust com interface gráfica assíncrona para orquestração de LLMs sem dependência de nuvem. Validado comercialmente e distribuído para usuários reais.
+                </p>
+                <div class="flex flex-wrap gap-3 text-xs">
+                    <a href="https://github.com/crabai" target="_blank" class="px-4 py-2 bg-zinc-800 text-zinc-200 hover:bg-zinc-700 rounded transition-colors font-bold">
+                        Ver Código Fonte
+                    </a>
+                    <a href="https://gumroad.com" target="_blank" class="px-4 py-2 bg-orange-600 text-white hover:bg-orange-500 rounded transition-colors font-bold">
+                        Página no Gumroad ➔
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- OUTROS REPOSITÓRIOS -->
+        <section class="space-y-6">
+            <div class="flex items-center gap-2">
+                <span class="text-orange-500 font-bold">#</span>
+                <h2 class="text-xl font-bold text-white uppercase tracking-wider">Ecosistema Técnico</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Card Rust/Security -->
+                <div class="bg-zinc-900/40 border border-zinc-800/80 rounded-lg p-5 hover:border-zinc-700 transition-colors">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="text-sm font-bold text-white">Sistemas & Tooling</h3>
+                        <span class="text-[11px] text-zinc-500">Rust / C</span>
+                    </div>
+                    <p class="text-zinc-400 text-xs leading-relaxed mb-4">
+                        Construção de ferramentas nativas de terminal, automações de segurança ofensiva e utilitários focados em concorrência e gerenciamento de memória eficiente.
+                    </p>
+                </div>
+
+                <!-- Card Backend -->
+                <div class="bg-zinc-900/40 border border-zinc-800/80 rounded-lg p-5 hover:border-zinc-700 transition-colors">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="text-sm font-bold text-white">Web Backend</h3>
+                        <span class="text-[11px] text-zinc-500">PHP / Laravel / SQL</span>
+                    </div>
+                    <p class="text-zinc-400 text-xs leading-relaxed mb-4">
+                        Desenvolvimento de APIs robustas utilizando padrões de arquitetura corporativa (MVC, DAO) e práticas recomendadas de segurança de dados (OWASP).
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CARREIRA / INSTRUTOR -->
+        <section class="space-y-4 bg-gradient-to-r from-orange-950/20 to-zinc-900/10 border border-orange-900/30 rounded-xl p-6">
+            <div class="flex items-center gap-2 mb-2">
+                <span class="text-orange-500 text-sm">✦</span>
+                <h3 class="text-base font-bold text-white">Atuação como Instrutor de TI</h3>
+            </div>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+                Atualmente leciono na <strong>Firjan SENAI (Resende - RJ)</strong>, capacitando a próxima geração de desenvolvedores. Essa experiência consolida diariamente minha habilidade em traduzir conceitos complexos de engenharia de software e segurança em soluções didáticas, organizadas e compreensíveis.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="max-w-4xl mx-auto px-6 py-12 text-center text-xs text-zinc-600 border-t border-zinc-900">
+        <p>© 2026 Danilo Ferreira Sousa. Construído com HTML estático & Tailwind CSS.</p>
+    </footer>
+
+</body>
+</html>
