@@ -1,0 +1,9 @@
+/* Efeito de brilho neon customizado para a estética do Rust/Cyberpunk */
+.glow-orange:hover {
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.4);
+}
+
+/* Transições suaves globais */
+a, button, div {
+    transition: all 0.2s ease-in-out;
+}
