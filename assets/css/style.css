@@ -1,9 +1,77 @@
-/* Efeito de brilho neon customizado para a estética do Rust/Cyberpunk */
-.glow-orange:hover {
-    box-shadow: 0 0 20px rgba(249, 115, 22, 0.4);
+/* Importação de uma fonte monospace mais agressiva e moderna para títulos */
+@import url('https://googleapis.com');
+
+:root {
+    --color-orange: #f97316;
+    --color-bg: #09090b;
+    --color-card: #141417;
+    --color-border: #27272a;
 }
 
-/* Transições suaves globais */
-a, button, div {
-    transition: all 0.2s ease-in-out;
+body {
+    font-family: 'Fira Code', monospace !important;
+    background-color: var(--color-bg);
+    /* Cria um background sutil de malha de engenharia (Grid) */
+    background-image: 
+        linear-gradient(to right, rgba(39, 39, 42, 0.15) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(39, 39, 42, 0.15) 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+/* Transições Globais Suaves */
+* {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Estilização Avançada dos Cards (Efeito Caixa de Hardware) */
+.custom-card {
+    background-color: var(--color-card) !important;
+    border: 1px solid var(--color-border) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.custom-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color: transparent;
+}
+
+/* Brilho neon cirúrgico ao passar o mouse */
+.custom-card:hover {
+    border-color: rgba(249, 115, 22, 0.5) !important;
+    box-shadow: 0 0 25px rgba(249, 115, 22, 0.08);
+    transform: translateY(-2px);
+}
+
+.custom-card:hover::before {
+    background-color: var(--color-orange);
+}
+
+/* Customização de botões para parecerem chaves de ativação */
+.btn-cyber {
+    border: 1px solid var(--color-border);
+    position: relative;
+}
+.btn-cyber:hover {
+    background-color: var(--color-orange) !important;
+    color: #000 !important;
+    border-color: var(--color-orange);
+    box-shadow: 0 0 15px rgba(249, 115, 22, 0.3);
+    font-weight: 700;
+}
+
+/* Linha de terminal piscante (Blink Animation) */
+.cursor-blink::after {
+    content: '_';
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
