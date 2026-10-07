@@ -5,13 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Danilo Ferreira | Systems & Backend Engineer</title>
     
-    <!-- Tailwind CSS Engine -->
-    <script src="https://jsdelivr.net"></script>
+    <!-- Tailwind CSS v3 (Script Estável para CDN) -->
+    <script src="https://tailwindcss.com"></script>
+    <script>
+        // Configuração para forçar o Tailwind a usar o tema escuro por padrão
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
     
     <!-- ARQUIVO CSS EXTERNO -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="bg-zinc-950 text-zinc-100 font-mono antialiased selection:bg-orange-500 selection:text-white">
+<body class="bg-zinc-950 text-zinc-100 font-mono antialiased selection:bg-orange-500 selection:text-white min-h-screen">
 
     <!-- HEADER / HERO SECTION -->
     <header class="max-w-4xl mx-auto px-6 pt-20 pb-12 border-b border-zinc-800">
@@ -29,9 +41,9 @@
             <!-- Links rápidos -->
             <div class="flex flex-col gap-2 text-xs text-zinc-400 bg-zinc-900/50 p-4 rounded-lg border border-zinc-800 md:min-w-[200px]">
                 <span class="text-zinc-500 uppercase tracking-widest text-[10px] font-bold">Contato</span>
-                <a href="https://linkedin.com" target="_blank" class="hover:text-orange-400">➔ LinkedIn</a>
-                <a href="https://github.com" target="_blank" class="hover:text-orange-400">➔ GitHub Perfil</a>
-                <a href="mailto:daniloasf@outlook.com" class="hover:text-orange-400">➔ E-mail</a>
+                <a href="https://linkedin.com" target="_blank" class="hover:text-orange-400 transition-colors">➔ LinkedIn</a>
+                <a href="https://github.com" target="_blank" class="hover:text-orange-400 transition-colors">➔ GitHub Perfil</a>
+                <a href="mailto:seu-email@provedor.com" class="hover:text-orange-400 transition-colors">➔ E-mail</a>
             </div>
         </div>
     </header>
@@ -60,10 +72,10 @@
                     Sistema de IA local, completamente offline e de alta performance. Desenvolvido nativamente em Rust com interface gráfica assíncrona para orquestração de LLMs sem dependência de nuvem. Validado comercialmente e distribuído para usuários reais.
                 </p>
                 <div class="flex flex-wrap gap-3 text-xs">
-                    <a href="https://github.com/crabai" target="_blank" class="px-4 py-2 bg-zinc-800 text-zinc-200 hover:bg-zinc-700 rounded font-bold">
+                    <a href="https://github.com/crabai" target="_blank" class="px-4 py-2 bg-zinc-800 text-zinc-200 hover:bg-zinc-700 rounded transition-colors font-bold">
                         Ver Código Fonte
                     </a>
-                    <a href="https://gumroad.com" target="_blank" class="px-4 py-2 bg-orange-600 text-white hover:bg-orange-500 rounded font-bold">
+                    <a href="https://gumroad.com" target="_blank" class="px-4 py-2 bg-orange-600 text-white hover:bg-orange-500 rounded transition-colors font-bold">
                         Página no Gumroad ➔
                     </a>
                 </div>
@@ -79,10 +91,10 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <!-- Card Rust/Security -->
-                <div class="bg-zinc-900/40 border border-zinc-800/80 rounded-lg p-5 hover:border-zinc-700">
+                <div class="bg-zinc-900/40 border border-zinc-800 rounded-lg p-5 hover:border-zinc-700 transition-colors">
                     <div class="flex items-center justify-between mb-3">
                         <h3 class="text-sm font-bold text-white">Sistemas & Tooling</h3>
-                        <span class="text-[11px] text-zinc-500">Rust / C</span>
+                        <span class="text-[11px] text-zinc-500 font-bold">Rust / C</span>
                     </div>
                     <p class="text-zinc-400 text-xs leading-relaxed">
                         Construção de ferramentas nativas de terminal, automações de segurança ofensiva e utilitários focados em concorrência e gerenciamento de memória eficiente.
@@ -90,10 +102,10 @@
                 </div>
 
                 <!-- Card Backend -->
-                <div class="bg-zinc-900/40 border border-zinc-800/80 rounded-lg p-5 hover:border-zinc-700">
+                <div class="bg-zinc-900/40 border border-zinc-800 rounded-lg p-5 hover:border-zinc-700 transition-colors">
                     <div class="flex items-center justify-between mb-3">
                         <h3 class="text-sm font-bold text-white">Web Backend</h3>
-                        <span class="text-[11px] text-zinc-500">PHP / Laravel / SQL</span>
+                        <span class="text-[11px] text-zinc-500 font-bold">PHP / Laravel / SQL</span>
                     </div>
                     <p class="text-zinc-400 text-xs leading-relaxed">
                         Desenvolvimento de APIs robustas utilizando padrões de arquitetura corporativa (MVC, DAO) e práticas recomendadas de segurança de dados (OWASP).
@@ -117,7 +129,7 @@
 
     <!-- FOOTER -->
     <footer class="max-w-4xl mx-auto px-6 py-12 text-center text-xs text-zinc-600 border-t border-zinc-900">
-        <p>© 2026 Danilo Ferreira Sousa. Arquitetura limpa com arquivos separados.</p>
+        <p>© 2026 Danilo Ferreira Sousa. Portfólio atualizado e estilizado.</p>
     </footer>
 
     <!-- ARQUIVO JS EXTERNO -->
