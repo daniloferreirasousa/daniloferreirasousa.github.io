@@ -1,451 +1,426 @@
-/* ================================================================
-   DANILO FERREIRA SOUSA
-   PORTFOLIO
-   ================================================================ */
-
 document.addEventListener("DOMContentLoaded", () => {
 
     /*
-     * ============================================================
-     * CONFIGURAÇÃO
-     * ============================================================
-     */
-
-    const CONFIG = {
-
-        terminalText: "whoami",
-
-        typingSpeed: 90,
-
-        revealThreshold: 0.12
-
-    };
+    ============================================================
+    PORTFÓLIO - DANILO FERREIRA SOUSA
+    ============================================================
+    */
 
 
-    /*
-     * ============================================================
-     * DIAGNÓSTICO DO SISTEMA
-     *
-     * Apenas uma pequena experiência para quem abrir o
-     * DevTools do navegador.
-     * ============================================================
-     */
+    /* =========================================================
+       NAVBAR - ALTERAÇÃO AO ROLAR
+    ========================================================== */
 
-    const runSystemDiagnostics = () => {
-
-        console.log(
-            "%c[SYSTEM] Danilo Ferreira Sousa Portfolio",
-            "color:#f97316;font-weight:bold;font-size:14px;"
-        );
-
-        const logs = [
-
-            {
-                message:
-                    "Inicializando interface...",
-                status: "OK"
-            },
-
-            {
-                message:
-                    "Carregando módulos de apresentação...",
-                status: "OK"
-            },
-
-            {
-                message:
-                    "Verificando integridade visual...",
-                status: "OK"
-            },
-
-            {
-                message:
-                    "Carregando projetos...",
-                status: "READY"
-            },
-
-            {
-                message:
-                    "Portfolio operacional.",
-                status: "ONLINE"
-            }
-
-        ];
+    const navigation = document.querySelector(".site-nav");
 
 
-        logs.forEach((log, index) => {
+    const updateNavigation = () => {
 
-            setTimeout(() => {
-
-                const color =
-                    log.status === "ONLINE"
-                        ? "#10b981"
-                        : "#f97316";
-
-                console.log(
-                    `%c[${log.status}] %c${log.message}`,
-                    `color:${color};font-weight:bold;`,
-                    "color:#71717a;"
-                );
-
-            }, index * 220);
-
-        });
-
-    };
-
-
-    /*
-     * ============================================================
-     * TERMINAL TYPING EFFECT
-     * ============================================================
-     */
-
-    const initializeTerminal = () => {
-
-        const terminalElement =
-            document.querySelector("#terminal-text");
-
-        if (!terminalElement) {
+        if (!navigation) {
             return;
         }
 
-        let currentIndex = 0;
+        if (window.scrollY > 20) {
 
-        const typeNextCharacter = () => {
+            navigation.classList.add("scrolled");
 
-            if (
-                currentIndex >=
-                CONFIG.terminalText.length
-            ) {
+        } else {
+
+            navigation.classList.remove("scrolled");
+
+        }
+
+    };
+
+
+    window.addEventListener(
+        "scroll",
+        updateNavigation,
+        { passive: true }
+    );
+
+
+    updateNavigation();
+
+
+
+    /* =========================================================
+       REVEAL DAS SEÇÕES
+    ========================================================== */
+
+    const revealElements = document.querySelectorAll(
+        ".section, .project-card, .timeline-item, .education-card, .contact-section"
+    );
+
+
+    revealElements.forEach((element) => {
+
+        element.classList.add("reveal");
+
+    });
+
+
+    const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+
+            entries.forEach((entry) => {
+
+                if (!entry.isIntersecting) {
+                    return;
+                }
+
+
+                entry.target.classList.add("visible");
+
+
+                observer.unobserve(entry.target);
+
+            });
+
+        },
+        {
+            threshold: 0.08
+        }
+    );
+
+
+    revealElements.forEach((element) => {
+
+        revealObserver.observe(element);
+
+    });
+
+
+
+    /* =========================================================
+       TERMINAL TYPING EFFECT
+    ========================================================== */
+
+    const commandElement =
+        document.querySelector(".hero-command");
+
+
+    if (commandElement) {
+
+        const command =
+            "danilo@dev:~$ whoami";
+
+
+        commandElement.textContent = "";
+
+
+        let position = 0;
+
+
+        const typeCommand = () => {
+
+            if (position >= command.length) {
                 return;
             }
 
-            currentIndex++;
 
-            terminalElement.textContent =
-                CONFIG.terminalText.substring(
-                    0,
-                    currentIndex
-                );
+            commandElement.textContent +=
+                command[position];
+
+
+            position++;
+
 
             setTimeout(
-                typeNextCharacter,
-                CONFIG.typingSpeed
+                typeCommand,
+                55
             );
 
         };
 
 
         setTimeout(
-            typeNextCharacter,
-            400
+            typeCommand,
+            500
         );
 
-    };
+    }
 
 
-    /*
-     * ============================================================
-     * REVEAL DAS SEÇÕES AO ROLAR
-     * ============================================================
-     */
 
-    const initializeScrollReveal = () => {
+    /* =========================================================
+       ANIMAÇÃO DA FOTO
+    ========================================================== */
 
-        const elements =
-            document.querySelectorAll(".reveal");
-
-        if (!elements.length) {
-            return;
-        }
+    const profileCard =
+        document.querySelector(".profile-card");
 
 
-        /*
-         * Fallback para navegadores sem IntersectionObserver.
-         */
+    if (profileCard) {
 
-        if (!("IntersectionObserver" in window)) {
-
-            elements.forEach((element) => {
-
-                element.classList.add("visible");
-
-            });
-
-            return;
-
-        }
-
-
-        const observer =
-            new IntersectionObserver(
-                (entries, observerInstance) => {
-
-                    entries.forEach((entry) => {
-
-                        if (!entry.isIntersecting) {
-                            return;
-                        }
-
-                        entry.target.classList.add(
-                            "visible"
-                        );
-
-                        observerInstance.unobserve(
-                            entry.target
-                        );
-
-                    });
-
-                },
-                {
-                    threshold:
-                        CONFIG.revealThreshold
-                }
-            );
-
-
-        elements.forEach((element) => {
-
-            observer.observe(element);
-
-        });
-
-    };
-
-
-    /*
-     * ============================================================
-     * EFEITO DE PARALLAX MUITO SUTIL NA FOTO
-     *
-     * O efeito só é ativado em dispositivos com mouse.
-     * Em celulares não existe movimentação.
-     * ============================================================
-     */
-
-    const initializePhotoParallax = () => {
-
-        const photo =
-            document.querySelector(".photo-frame");
-
-        if (!photo) {
-            return;
-        }
-
-
-        const supportsHover =
-            window.matchMedia(
-                "(hover: hover)"
-            ).matches;
-
-        if (!supportsHover) {
-            return;
-        }
-
-
-        photo.addEventListener(
+        profileCard.addEventListener(
             "mousemove",
             (event) => {
 
                 const rect =
-                    photo.getBoundingClientRect();
+                    profileCard.getBoundingClientRect();
+
 
                 const x =
-                    event.clientX -
-                    rect.left;
+                    event.clientX - rect.left;
+
 
                 const y =
-                    event.clientY -
-                    rect.top;
-
-
-                const centerX =
-                    rect.width / 2;
-
-                const centerY =
-                    rect.height / 2;
+                    event.clientY - rect.top;
 
 
                 const rotateX =
-                    ((y - centerY) /
-                        centerY) *
-                    -2;
+                    ((y / rect.height) - 0.5) * -4;
+
 
                 const rotateY =
-                    ((x - centerX) /
-                        centerX) *
-                    2;
+                    ((x / rect.width) - 0.5) * 4;
 
 
-                photo.style.transform =
+                profileCard.style.transform =
                     `perspective(900px)
                      rotateX(${rotateX}deg)
                      rotateY(${rotateY}deg)
-                     translateY(-4px)`;
+                     translateY(-3px)`;
 
             }
         );
 
 
-        photo.addEventListener(
+        profileCard.addEventListener(
             "mouseleave",
             () => {
 
-                photo.style.transform =
-                    "rotate(1deg)";
+                profileCard.style.transform =
+                    "";
 
             }
         );
 
-    };
+    }
 
 
-    /*
-     * ============================================================
-     * LOG DE NAVEGAÇÃO
-     * ============================================================
-     */
 
-    const initializeNavigationLogs = () => {
+    /* =========================================================
+       LOG DE INICIALIZAÇÃO
+    ========================================================== */
 
-        const links =
-            document.querySelectorAll(
-                "a[href]"
-            );
+    console.log(
+        "%c DANILO.DEV ",
+        "background:#f97316;color:#000;font-weight:bold;padding:5px;"
+    );
 
 
-        links.forEach((link) => {
-
-            link.addEventListener(
-                "click",
-                () => {
-
-                    const destination =
-                        link.getAttribute(
-                            "href"
-                        );
-
-                    console.log(
-                        `%c[NAVIGATION] ${destination}`,
-                        "color:#38bdf8;"
-                    );
-
-                }
-            );
-
-        });
-
-    };
+    console.log(
+        "%cPortfolio initialized.",
+        "color:#10b981;font-weight:bold;"
+    );
 
 
-    /*
-     * ============================================================
-     * LOG DE E-MAIL
-     * ============================================================
-     */
-
-    const initializeEmailLog = () => {
-
-        const emailLinks =
-            document.querySelectorAll(
-                'a[href^="mailto:"]'
-            );
+    console.log(
+        "%cStack: PHP / Laravel / JavaScript / Docker / NativePHP",
+        "color:#a1a1aa;"
+    );
 
 
-        emailLinks.forEach((link) => {
 
-            link.addEventListener(
-                "click",
-                () => {
+    /* =========================================================
+       LOGS DE NAVEGAÇÃO
+    ========================================================== */
 
-                    console.log(
-                        "%c[ACTION] Abrindo cliente de e-mail local.",
-                        "color:#f97316;font-style:italic;"
-                    );
-
-                }
-            );
-
-        });
-
-    };
+    const externalLinks =
+        document.querySelectorAll(
+            'a[target="_blank"]'
+        );
 
 
-    /*
-     * ============================================================
-     * EASTER EGG DO TECLADO
-     *
-     * Digitar "sudo" no teclado exibe uma pequena mensagem
-     * no console.
-     * ============================================================
-     */
+    externalLinks.forEach((link) => {
 
-    const initializeKeyboardEasterEgg = () => {
+        link.addEventListener(
+            "click",
+            () => {
 
-        let input = "";
+                console.log(
+                    `%c[NAVIGATION] ${link.href}`,
+                    "color:#f97316;"
+                );
 
-        const secret =
-            "sudo";
+            }
+        );
 
-        document.addEventListener(
-            "keydown",
+    });
+
+
+
+    /* =========================================================
+       LOG DE CONTATO
+    ========================================================== */
+
+    const emailLinks =
+        document.querySelectorAll(
+            'a[href^="mailto:"]'
+        );
+
+
+    emailLinks.forEach((link) => {
+
+        link.addEventListener(
+            "click",
+            () => {
+
+                console.log(
+                    "%c[CONTACT] Opening local email client...",
+                    "color:#10b981;"
+                );
+
+            }
+        );
+
+    });
+
+
+
+    /* =========================================================
+       EFEITO SUTIL NO BACKGROUND
+    ========================================================== */
+
+    const backgroundGlowOne =
+        document.querySelector(
+            ".background-glow-one"
+        );
+
+
+    const backgroundGlowTwo =
+        document.querySelector(
+            ".background-glow-two"
+        );
+
+
+    window.addEventListener(
+        "mousemove",
+        (event) => {
+
+            const x =
+                event.clientX / window.innerWidth;
+
+
+            const y =
+                event.clientY / window.innerHeight;
+
+
+            if (backgroundGlowOne) {
+
+                backgroundGlowOne.style.transform =
+                    `translate(${x * 35}px, ${y * 20}px)`;
+
+            }
+
+
+            if (backgroundGlowTwo) {
+
+                backgroundGlowTwo.style.transform =
+                    `translate(${-x * 25}px, ${-y * 15}px)`;
+
+            }
+
+        },
+        { passive: true }
+    );
+
+
+
+    /* =========================================================
+       SMOOTH SCROLL PARA LINKS INTERNOS
+    ========================================================== */
+
+    const internalLinks =
+        document.querySelectorAll(
+            'a[href^="#"]'
+        );
+
+
+    internalLinks.forEach((link) => {
+
+        link.addEventListener(
+            "click",
             (event) => {
 
+                const targetId =
+                    link.getAttribute("href");
+
+
                 if (
-                    event.key.length !== 1
+                    !targetId ||
+                    targetId === "#"
                 ) {
                     return;
                 }
 
-                input +=
-                    event.key.toLowerCase();
 
-                if (input.length > secret.length) {
+                const target =
+                    document.querySelector(targetId);
 
-                    input =
-                        input.slice(
-                            -secret.length
-                        );
 
+                if (!target) {
+                    return;
                 }
 
 
-                if (input === secret) {
+                event.preventDefault();
 
-                    console.log(
-                        "%c[SUDO] Access granted.",
-                        "color:#10b981;font-weight:bold;"
-                    );
 
-                    input = "";
+                const navHeight =
+                    navigation
+                        ? navigation.offsetHeight
+                        : 0;
 
-                }
+
+                const targetPosition =
+                    target.getBoundingClientRect().top +
+                    window.scrollY -
+                    navHeight -
+                    20;
+
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: "smooth"
+                });
 
             }
         );
 
-    };
+    });
 
 
-    /*
-     * ============================================================
-     * INICIALIZAÇÃO
-     * ============================================================
-     */
 
-    runSystemDiagnostics();
+    /* =========================================================
+       STATUS DINÂMICO
+    ========================================================== */
 
-    initializeTerminal();
+    const statusElement =
+        document.querySelector(".terminal-label");
 
-    initializeScrollReveal();
 
-    initializePhotoParallax();
+    if (statusElement) {
 
-    initializeNavigationLogs();
+        setTimeout(() => {
 
-    initializeEmailLog();
+            const text =
+                statusElement.querySelector(
+                    "span:last-child"
+                );
 
-    initializeKeyboardEasterEgg();
+
+            if (text) {
+
+                text.textContent =
+                    "SYSTEM_READY";
+
+            }
+
+        }, 1800);
+
+    }
 
 });

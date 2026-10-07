@@ -2,516 +2,823 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <title>Danilo Ferreira Sousa | Full Stack Developer</title>
 
     <meta
         name="description"
-        content="Portfólio de Danilo Ferreira Sousa — Systems & Backend Engineer e Instrutor de TI na Firjan SENAI."
+        content="Portfólio de Danilo Ferreira Sousa — Desenvolvedor Full Stack, Professor de TI e especialista em desenvolvimento de sistemas."
     >
 
-    <meta
-        name="theme-color"
-        content="#09090b"
-    >
+    <script src="assets/js/tailwindcss.min.js"></script>
 
-    <title>
-        Danilo Ferreira Sousa | Systems & Backend Engineer
-    </title>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        mono: [
+                            'Fira Code',
+                            'ui-monospace',
+                            'SFMono-Regular',
+                            'Menlo',
+                            'Monaco',
+                            'Consolas',
+                            'monospace'
+                        ]
+                    }
+                }
+            }
+        }
+    </script>
 
-    <link
-        rel="stylesheet"
-        href="assets/css/style.css"
-    >
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
     <!-- =========================================================
-         BACKGROUND / ELEMENTOS DECORATIVOS
-         ========================================================= -->
+         BACKGROUND
+    ========================================================== -->
 
-    <div class="background-glow background-glow-top"></div>
-    <div class="background-glow background-glow-bottom"></div>
-
-    <!-- Linha vertical decorativa -->
-    <div class="side-line side-line-left"></div>
-    <div class="side-line side-line-right"></div>
+    <div class="background-grid"></div>
+    <div class="background-glow background-glow-one"></div>
+    <div class="background-glow background-glow-two"></div>
 
     <!-- =========================================================
-         HEADER SUPERIOR
-         ========================================================= -->
+         NAVBAR
+    ========================================================== -->
 
-    <div class="system-bar">
+    <nav class="site-nav">
 
-        <div class="system-status">
-            <span class="status-dot"></span>
-            <span>STATUS: OPERATIONAL</span>
-        </div>
+        <div class="nav-container">
 
-        <div class="system-host">
-            HOST: danilo_ferreira_sousa
-        </div>
+            <a href="#inicio" class="brand">
+                <span class="brand-symbol">&lt;/&gt;</span>
+                <span>danilo.dev</span>
+            </a>
 
-    </div>
+            <div class="nav-links">
 
+                <a href="#sobre">Sobre</a>
 
-    <!-- =========================================================
-         HERO
-         ========================================================= -->
+                <a href="#projetos">Projetos</a>
 
-    <header class="hero">
+                <a href="#tecnologias">Tecnologias</a>
 
-        <!-- Conteúdo principal -->
-        <div class="hero-content">
+                <a href="#experiencia">Experiência</a>
 
-            <div class="terminal-command">
-                <span class="terminal-user">
-                    guest@danilo
-                </span><span class="terminal-symbol">:~#</span>
-                <span id="terminal-text"></span>
-                <span class="terminal-cursor"></span>
-            </div>
-
-            <div class="hero-label">
-                SYSTEMS / BACKEND / SOFTWARE
-            </div>
-
-            <h1 class="hero-title">
-                Danilo
-                <span>Ferreira Sousa</span>
-            </h1>
-
-            <div class="hero-role">
-                Systems &amp; Backend Engineer
-            </div>
-
-            <p class="hero-description">
-                Desenvolvedor de sistemas, backend e software local.
-                Também atuo como Instrutor de Tecnologia da Informação
-                na Firjan SENAI.
-            </p>
-
-            <div class="hero-actions">
-
-                <a
-                    href="https://github.com/daniloferreirasousa"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="action-button action-primary"
-                >
-                    <span class="button-icon">&gt;_</span>
-                    GitHub
-                </a>
-
-                <a
-                    href="https://linkedin.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="action-button"
-                >
-                    <span class="button-icon">↗</span>
-                    LinkedIn
-                </a>
-
-                <a
-                    href="mailto:seu-email@provedor.com"
-                    class="action-button"
-                >
-                    <span class="button-icon">@</span>
-                    E-mail
-                </a>
+                <a href="#formacao">Formação</a>
 
             </div>
+
+            <a
+                href="mailto:daniloasf@outlook.com"
+                class="nav-contact"
+            >
+                Contato
+            </a>
 
         </div>
-
-
-        <!-- Foto / identidade visual -->
-        <div class="hero-photo">
-
-            <div class="photo-frame">
-
-                <div class="photo-corner photo-corner-top"></div>
-                <div class="photo-corner photo-corner-bottom"></div>
-
-                <div class="photo-status">
-                    <span class="photo-status-dot"></span>
-                    IDENTITY_VERIFIED
-                </div>
-
-                <img
-                    src="assets/img/danilo.jpg"
-                    alt="Foto de Danilo Ferreira Sousa"
-                    class="profile-image"
-                >
-
-                <div class="photo-overlay"></div>
-
-                <div class="photo-code">
-                    SYS_001 // BACKEND
-                </div>
-
-            </div>
-
-            <div class="photo-decoration decoration-one">
-                01
-            </div>
-
-            <div class="photo-decoration decoration-two">
-                // DEV
-            </div>
-
-        </div>
-
-    </header>
-
-
-    <!-- =========================================================
-         NAVEGAÇÃO RÁPIDA
-         ========================================================= -->
-
-    <nav class="quick-nav">
-
-        <a href="#project">
-            <span>01</span>
-            PROJECT
-        </a>
-
-        <a href="#stack">
-            <span>02</span>
-            STACK
-        </a>
-
-        <a href="#experience">
-            <span>03</span>
-            EXPERIENCE
-        </a>
 
     </nav>
 
 
     <!-- =========================================================
          MAIN
-         ========================================================= -->
+    ========================================================== -->
 
-    <main class="main-content">
+    <main>
 
 
         <!-- =====================================================
-             PROJETO EM DESTAQUE
-             ===================================================== -->
+             HERO
+        ====================================================== -->
 
-        <section
-            id="project"
-            class="portfolio-section reveal"
-        >
+        <section id="inicio" class="hero-section">
 
-            <div class="section-header">
+            <div class="hero-container">
 
-                <div class="section-number">
-                    01.
+                <div class="hero-content">
+
+                    <div class="terminal-label">
+
+                        <span class="status-dot"></span>
+
+                        <span>AVAILABLE_FOR_DEVELOPMENT</span>
+
+                    </div>
+
+
+                    <div class="hero-command">
+                        danilo@dev:~$ whoami
+                    </div>
+
+
+                    <h1>
+
+                        Danilo
+                        <span>Ferreira Sousa</span>
+
+                    </h1>
+
+
+                    <div class="hero-role">
+
+                        <span class="role-highlight">
+                            Full Stack Developer
+                        </span>
+
+                        <span class="role-separator">/</span>
+
+                        <span>
+                            Professor de TI
+                        </span>
+
+                    </div>
+
+
+                    <p class="hero-description">
+
+                        Desenvolvedor de sistemas com experiência em
+                        <strong>PHP, Laravel, JavaScript e Docker</strong>,
+                        atuando também com arquitetura de software,
+                        desenvolvimento Full Stack e aplicações desktop.
+
+                    </p>
+
+
+                    <div class="hero-actions">
+
+                        <a
+                            href="#projetos"
+                            class="button button-primary"
+                        >
+                            Ver projetos
+                            <span>→</span>
+                        </a>
+
+                        <a
+                            href="https://github.com/daniloferreirasousa"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="button button-secondary"
+                        >
+                            GitHub
+                        </a>
+
+                        <a
+                            href="https://www.linkedin.com/in/daniloferreirasousa/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="button button-secondary"
+                        >
+                            LinkedIn
+                        </a>
+
+                    </div>
+
+
+                    <div class="hero-meta">
+
+                        <span>
+                            <strong>01</strong>
+                            Desenvolvimento
+                        </span>
+
+                        <span>
+                            <strong>02</strong>
+                            Arquitetura
+                        </span>
+
+                        <span>
+                            <strong>03</strong>
+                            Educação
+                        </span>
+
+                    </div>
+
                 </div>
+
+
+                <!-- FOTO -->
+
+                <div class="hero-profile">
+
+                    <div class="profile-decoration"></div>
+
+                    <div class="profile-card">
+
+                        <div class="profile-header">
+
+                            <span>PROFILE</span>
+
+                            <span class="profile-online">
+                                ● ONLINE
+                            </span>
+
+                        </div>
+
+
+                        <div class="profile-image-wrapper">
+
+                            <img
+                                src="assets/images/perfil.jpg"
+                                alt="Danilo Ferreira Sousa"
+                                class="profile-image"
+                            >
+
+                        </div>
+
+
+                        <div class="profile-info">
+
+                            <h2>
+                                Danilo Ferreira
+                            </h2>
+
+                            <p>
+                                Full Stack Developer
+                            </p>
+
+                            <span>
+                                Resende, RJ — Brasil
+                            </span>
+
+                        </div>
+
+
+                        <div class="profile-stack">
+
+                            <span>PHP</span>
+                            <span>Laravel</span>
+                            <span>Docker</span>
+                            <span>JavaScript</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             SOBRE
+        ====================================================== -->
+
+        <section id="sobre" class="section">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    01
+                </span>
 
                 <div>
                     <span class="section-kicker">
-                        SELECTED PROJECT
+                        SOBRE MIM
                     </span>
 
-                    <h2 class="section-title">
-                        Projeto em destaque
+                    <h2>
+                        Desenvolvimento de sistemas
+                        com visão de arquitetura.
                     </h2>
                 </div>
 
             </div>
 
 
-            <article class="featured-project">
+            <div class="about-grid">
 
-                <!-- Cabeçalho do projeto -->
-                <div class="project-header">
+                <div class="about-main">
 
-                    <div class="project-title-area">
+                    <p class="large-text">
 
-                        <div class="project-icon">
-                            🦀
+                        Sou profissional de tecnologia com experiência
+                        em <strong>desenvolvimento de sistemas,
+                        programação e arquitetura de software</strong>.
+
+                    </p>
+
+                    <p>
+
+                        Atualmente atuo como Professor de TI na
+                        <strong>Firjan SENAI</strong>, trabalhando com
+                        formação profissional na área de desenvolvimento
+                        de sistemas.
+
+                    </p>
+
+                    <p>
+
+                        Minha atuação técnica está concentrada principalmente
+                        no desenvolvimento de aplicações web utilizando
+                        <strong>PHP e Laravel</strong>, integração de sistemas,
+                        bancos de dados, APIs, JavaScript e ambientes
+                        conteinerizados com Docker.
+
+                    </p>
+
+                    <p>
+
+                        Também tenho interesse em aplicações desktop,
+                        automação, segurança, sistemas de baixo nível
+                        e execução local de modelos de inteligência artificial.
+
+                    </p>
+
+                </div>
+
+
+                <div class="about-terminal">
+
+                    <div class="terminal-top">
+
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+
+                    </div>
+
+                    <div class="terminal-body">
+
+                        <div>
+                            <span class="terminal-green">$</span>
+                            cat profile.json
+                        </div>
+
+                        <br>
+
+                        <div>
+                            <span class="terminal-key">"role"</span>:
+                            <span class="terminal-string">
+                                "Full Stack Developer"
+                            </span>,
                         </div>
 
                         <div>
-
-                            <span class="project-category">
-                                LOCAL AI / SYSTEM LEVEL
-                            </span>
-
-                            <h3>
-                                CrabAI
-                            </h3>
-
+                            <span class="terminal-key">"focus"</span>:
+                            <span class="terminal-string">
+                                "Laravel / PHP"
+                            </span>,
                         </div>
 
-                    </div>
-
-                    <div class="project-status">
-                        <span></span>
-                        COMMERCIAL PROJECT
-                    </div>
-
-                </div>
-
-
-                <!-- Conteúdo -->
-                <div class="project-body">
-
-                    <div class="project-description">
-
-                        <p>
-                            Sistema de IA local para execução e
-                            orquestração de LLMs sem dependência
-                            de infraestrutura em nuvem.
-                        </p>
-
-                        <div class="project-tags">
-
-                            <span>Rust</span>
-                            <span>egui</span>
-                            <span>LLM</span>
-                            <span>Offline</span>
-                            <span>Local AI</span>
-
+                        <div>
+                            <span class="terminal-key">"frontend"</span>:
+                            <span class="terminal-string">
+                                "JavaScript"
+                            </span>,
                         </div>
 
-                    </div>
-
-
-                    <!-- Indicadores -->
-                    <div class="project-metrics">
-
-                        <div class="metric">
-
-                            <span class="metric-value">
-                                100%
-                            </span>
-
-                            <span class="metric-label">
-                                LOCAL
-                            </span>
-
+                        <div>
+                            <span class="terminal-key">"infra"</span>:
+                            <span class="terminal-string">
+                                "Docker"
+                            </span>,
                         </div>
 
-                        <div class="metric">
-
-                            <span class="metric-value">
-                                Rust
+                        <div>
+                            <span class="terminal-key">"education"</span>:
+                            <span class="terminal-string">
+                                "TI Instructor"
                             </span>
-
-                            <span class="metric-label">
-                                CORE
-                            </span>
-
                         </div>
 
-                        <div class="metric">
+                        <br>
 
-                            <span class="metric-value">
-                                OFFLINE
-                            </span>
-
-                            <span class="metric-label">
-                                OPERATION
-                            </span>
-
+                        <div>
+                            <span class="terminal-green">$</span>
+                            <span class="cursor"></span>
                         </div>
 
                     </div>
 
                 </div>
 
-
-                <!-- Ações -->
-                <div class="project-footer">
-
-                    <a
-                        href="https://github.com/crabai"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project-button"
-                    >
-                        Ver código fonte
-                        <span>↗</span>
-                    </a>
-
-                    <a
-                        href="https://gumroad.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project-button project-button-accent"
-                    >
-                        Acessar produto
-                        <span>→</span>
-                    </a>
-
-                </div>
-
-            </article>
+            </div>
 
         </section>
+
 
 
         <!-- =====================================================
-             STACK
-             ===================================================== -->
+             PROJETOS
+        ====================================================== -->
 
-        <section
-            id="stack"
-            class="portfolio-section reveal"
-        >
+        <section id="projetos" class="section">
 
-            <div class="section-header">
+            <div class="section-heading">
 
-                <div class="section-number">
-                    02.
-                </div>
+                <span class="section-number">
+                    02
+                </span>
 
                 <div>
+
                     <span class="section-kicker">
-                        TECHNOLOGY
+                        PROJETOS
                     </span>
 
-                    <h2 class="section-title">
-                        Technical Stack
+                    <h2>
+                        Sistemas construídos
+                        para resolver problemas.
                     </h2>
+
                 </div>
 
             </div>
 
 
-            <div class="stack-grid">
+            <div class="projects-grid">
 
-                <div class="stack-group">
 
-                    <div class="stack-group-header">
+                <!-- PROJETO 1 -->
 
-                        <span class="stack-index">
-                            01
+                <article class="project-card project-featured">
+
+                    <div class="project-top">
+
+                        <div class="project-icon">
+                            PHP
+                        </div>
+
+                        <span class="project-status">
+                            DEVELOPMENT
                         </span>
 
-                        <h3>
-                            Systems &amp; Tooling
-                        </h3>
-
                     </div>
+
+
+                    <h3>
+                        Aplicações Web com Laravel
+                    </h3>
+
 
                     <p>
-                        Desenvolvimento de ferramentas nativas,
-                        sistemas de baixo nível e aplicações
-                        orientadas a performance.
+
+                        Desenvolvimento de sistemas web estruturados
+                        utilizando Laravel, arquitetura MVC, autenticação,
+                        autorização, banco de dados, APIs e componentes
+                        reutilizáveis.
+
                     </p>
 
-                    <div class="tech-list">
 
-                        <span>Rust</span>
-                        <span>C</span>
-                        <span>Linux</span>
-                        <span>CLI</span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="stack-group">
-
-                    <div class="stack-group-header">
-
-                        <span class="stack-index">
-                            02
-                        </span>
-
-                        <h3>
-                            Web Backend
-                        </h3>
-
-                    </div>
-
-                    <p>
-                        Desenvolvimento de aplicações backend,
-                        APIs e sistemas web com foco em organização,
-                        segurança e manutenção.
-                    </p>
-
-                    <div class="tech-list">
+                    <div class="project-technologies">
 
                         <span>PHP</span>
                         <span>Laravel</span>
-                        <span>REST API</span>
                         <span>MySQL</span>
+                        <span>Blade</span>
+
+                    </div>
+
+
+                    <div class="project-link">
+                        <span>CASE STUDY</span>
+                        <span>→</span>
+                    </div>
+
+                </article>
+
+
+
+                <!-- PROJETO 2 -->
+
+                <article class="project-card">
+
+                    <div class="project-top">
+
+                        <div class="project-icon">
+                            APP
+                        </div>
+
+                        <span class="project-status">
+                            DESKTOP
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Aplicações Desktop
+                    </h3>
+
+
+                    <p>
+
+                        Desenvolvimento de aplicações desktop utilizando
+                        tecnologias web e integração com recursos nativos,
+                        com foco em aplicações distribuídas e uso local.
+
+                    </p>
+
+
+                    <div class="project-technologies">
+
+                        <span>PHP</span>
+                        <span>Laravel</span>
+                        <span>NativePHP</span>
+
+                    </div>
+
+
+                    <div class="project-link">
+                        <span>EXPLORE</span>
+                        <span>→</span>
+                    </div>
+
+                </article>
+
+
+
+                <!-- PROJETO 3 -->
+
+                <article class="project-card">
+
+                    <div class="project-top">
+
+                        <div class="project-icon">
+                            API
+                        </div>
+
+                        <span class="project-status">
+                            BACKEND
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        APIs e Integrações
+                    </h3>
+
+
+                    <p>
+
+                        Construção de APIs e integrações entre sistemas,
+                        trabalhando com requisições HTTP, serviços externos,
+                        persistência de dados e processamento de informações.
+
+                    </p>
+
+
+                    <div class="project-technologies">
+
+                        <span>PHP</span>
+                        <span>Laravel</span>
+                        <span>REST</span>
+                        <span>JSON</span>
+
+                    </div>
+
+
+                    <div class="project-link">
+                        <span>EXPLORE</span>
+                        <span>→</span>
+                    </div>
+
+                </article>
+
+
+
+                <!-- PROJETO 4 -->
+
+                <article class="project-card">
+
+                    <div class="project-top">
+
+                        <div class="project-icon">
+                            AI
+                        </div>
+
+                        <span class="project-status">
+                            LAB
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        IA Local
+                    </h3>
+
+
+                    <p>
+
+                        Experimentação com execução local de modelos de
+                        inteligência artificial, automação e ferramentas
+                        independentes de serviços centralizados em nuvem.
+
+                    </p>
+
+
+                    <div class="project-technologies">
+
+                        <span>AI</span>
+                        <span>Local LLM</span>
+                        <span>Rust</span>
+
+                    </div>
+
+
+                    <div class="project-link">
+                        <span>LAB PROJECT</span>
+                        <span>→</span>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             TECNOLOGIAS
+        ====================================================== -->
+
+        <section id="tecnologias" class="section">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    03
+                </span>
+
+                <div>
+
+                    <span class="section-kicker">
+                        STACK
+                    </span>
+
+                    <h2>
+                        Tecnologias que fazem
+                        parte do meu trabalho.
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="stack-layout">
+
+
+                <div class="stack-primary">
+
+                    <div class="stack-category">
+
+                        <span class="stack-number">
+                            01
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Backend
+                            </h3>
+
+                            <p>
+                                Desenvolvimento de sistemas e APIs.
+                            </p>
+
+                            <div class="technology-list">
+
+                                <span class="technology-main">
+                                    PHP
+                                </span>
+
+                                <span class="technology-main">
+                                    Laravel
+                                </span>
+
+                                <span>
+                                    APIs REST
+                                </span>
+
+                                <span>
+                                    MVC
+                                </span>
+
+                                <span>
+                                    MySQL
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="stack-category">
+
+                        <span class="stack-number">
+                            02
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Frontend
+                            </h3>
+
+                            <p>
+                                Interfaces e aplicações web.
+                            </p>
+
+                            <div class="technology-list">
+
+                                <span class="technology-main">
+                                    JavaScript
+                                </span>
+
+                                <span>
+                                    HTML
+                                </span>
+
+                                <span>
+                                    CSS
+                                </span>
+
+                                <span>
+                                    Bootstrap
+                                </span>
+
+                                <span>
+                                    Blade
+                                </span>
+
+                            </div>
+
+                        </div>
 
                     </div>
 
                 </div>
 
 
-                <div class="stack-group">
 
-                    <div class="stack-group-header">
+                <div class="stack-secondary">
 
-                        <span class="stack-index">
-                            03
+                    <div class="mini-stack">
+
+                        <span class="mini-stack-label">
+                            INFRA
                         </span>
 
-                        <h3>
-                            Infrastructure
-                        </h3>
+                        <strong>
+                            Docker
+                        </strong>
+
+                        <p>
+                            Containers, ambientes de desenvolvimento
+                            e serviços.
+                        </p>
 
                     </div>
 
-                    <p>
-                        Ambientes de desenvolvimento, versionamento,
-                        containers e ferramentas para organização
-                        do ciclo de desenvolvimento.
-                    </p>
 
-                    <div class="tech-list">
+                    <div class="mini-stack">
 
-                        <span>Git</span>
-                        <span>Docker</span>
-                        <span>GitHub</span>
-                        <span>Linux</span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="stack-group">
-
-                    <div class="stack-group-header">
-
-                        <span class="stack-index">
-                            04
+                        <span class="mini-stack-label">
+                            DESKTOP
                         </span>
 
-                        <h3>
-                            Security
-                        </h3>
+                        <strong>
+                            NativePHP
+                        </strong>
+
+                        <p>
+                            Aplicações desktop utilizando tecnologias web.
+                        </p>
 
                     </div>
 
-                    <p>
-                        Desenvolvimento orientado a boas práticas
-                        de segurança, proteção de aplicações e
-                        princípios OWASP.
-                    </p>
 
-                    <div class="tech-list">
+                    <div class="mini-stack">
 
-                        <span>OWASP</span>
-                        <span>Security</span>
-                        <span>Privacy</span>
-                        <span>Red Team</span>
+                        <span class="mini-stack-label">
+                            EXPLORATION
+                        </span>
+
+                        <strong>
+                            Rust & IA Local
+                        </strong>
+
+                        <p>
+                            Estudos e projetos experimentais
+                            de sistemas e inteligência artificial.
+                        </p>
 
                     </div>
 
@@ -520,102 +827,314 @@
             </div>
 
         </section>
+
 
 
         <!-- =====================================================
              EXPERIÊNCIA
-             ===================================================== -->
+        ====================================================== -->
 
-        <section
-            id="experience"
-            class="portfolio-section reveal"
-        >
+        <section id="experiencia" class="section">
 
-            <div class="section-header">
+            <div class="section-heading">
 
-                <div class="section-number">
-                    03.
-                </div>
+                <span class="section-number">
+                    04
+                </span>
 
                 <div>
+
                     <span class="section-kicker">
-                        PROFESSIONAL EXPERIENCE
+                        EXPERIÊNCIA
                     </span>
 
-                    <h2 class="section-title">
-                        Experience
+                    <h2>
+                        Experiência profissional.
                     </h2>
+
                 </div>
 
             </div>
 
 
-            <article class="experience-card">
+            <div class="timeline">
 
-                <div class="experience-line">
 
-                    <span class="experience-dot"></span>
+                <!-- SENAI -->
 
-                    <div class="experience-period">
-                        2026 — PRESENT
+                <article class="timeline-item current">
+
+                    <div class="timeline-marker"></div>
+
+                    <div class="timeline-date">
+                        NOV 2025 — ATUAL
                     </div>
 
-                </div>
+                    <div class="timeline-content">
 
-
-                <div class="experience-content">
-
-                    <div class="experience-company">
-
-                        <span>
+                        <span class="timeline-company">
                             FIRJAN SENAI
                         </span>
 
-                        <div class="experience-location">
-                            Resende — RJ
-                        </div>
+                        <h3>
+                            Professor de TI | Programação e
+                            Desenvolvimento de Sistemas
+                        </h3>
+
+                        <p>
+
+                            Atuação na formação de profissionais de tecnologia,
+                            com foco em programação, desenvolvimento de sistemas,
+                            banco de dados, arquitetura e práticas de desenvolvimento.
+
+                        </p>
 
                     </div>
 
-                    <h3>
-                        Instrutor de Tecnologia da Informação
-                    </h3>
+                </article>
 
-                    <p>
-                        Atuação na formação de novos profissionais
-                        de tecnologia, trabalhando com desenvolvimento
-                        de sistemas, backend, bancos de dados e
-                        práticas de desenvolvimento de software.
-                    </p>
 
-                </div>
 
-            </article>
+                <!-- AMAN DEV -->
+
+                <article class="timeline-item">
+
+                    <div class="timeline-marker"></div>
+
+                    <div class="timeline-date">
+                        JAN 2023 — MAR 2025
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <span class="timeline-company">
+                            ACADEMIA MILITAR DAS AGULHAS NEGRAS
+                        </span>
+
+                        <h3>
+                            Analista e Desenvolvedor de Sistemas
+                        </h3>
+
+                        <p>
+
+                            Atuação no desenvolvimento, manutenção e testes
+                            de sistemas e softwares, contribuindo para soluções
+                            utilizadas pela instituição.
+
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ESTÁGIO -->
+
+                <article class="timeline-item">
+
+                    <div class="timeline-marker"></div>
+
+                    <div class="timeline-date">
+                        JUL 2022 — JAN 2023
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <span class="timeline-company">
+                            AMAN — DTSIC
+                        </span>
+
+                        <h3>
+                            Estagiário em Sistemas
+                        </h3>
+
+                        <p>
+
+                            Apoio na manutenção e desenvolvimento de sistemas
+                            utilizados pela instituição.
+
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- EXÉRCITO -->
+
+                <article class="timeline-item">
+
+                    <div class="timeline-marker"></div>
+
+                    <div class="timeline-date">
+                        2019 — 2022
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <span class="timeline-company">
+                            EXÉRCITO BRASILEIRO
+                        </span>
+
+                        <h3>
+                            Experiência profissional e institucional
+                        </h3>
+
+                        <p>
+
+                            Experiência anterior no ambiente militar,
+                            contribuindo para disciplina, organização,
+                            responsabilidade e trabalho em equipe.
+
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
 
         </section>
 
 
+
         <!-- =====================================================
-             FILOSOFIA / IDENTIDADE
-             ===================================================== -->
+             FORMAÇÃO
+        ====================================================== -->
 
-        <section class="manifesto reveal">
+        <section id="formacao" class="section">
 
-            <div class="manifesto-symbol">
-                //
-            </div>
+            <div class="section-heading">
 
-            <div class="manifesto-content">
-
-                <span class="section-kicker">
-                    ENGINEERING PRINCIPLE
+                <span class="section-number">
+                    05
                 </span>
 
-                <p>
-                    Software deve ser rápido, compreensível,
-                    seguro e, sempre que possível, livre de
-                    dependências desnecessárias.
-                </p>
+                <div>
+
+                    <span class="section-kicker">
+                        FORMAÇÃO
+                    </span>
+
+                    <h2>
+                        Formação acadêmica.
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="education-grid">
+
+
+                <article class="education-card">
+
+                    <div class="education-year">
+                        2022 — 2024
+                    </div>
+
+                    <span class="education-institution">
+                        ESTÁCIO
+                    </span>
+
+                    <h3>
+                        Tecnologia em Análise e
+                        Desenvolvimento de Sistemas
+                    </h3>
+
+                    <p>
+                        Curso Superior de Tecnologia — CST
+                    </p>
+
+                </article>
+
+
+
+                <article class="education-card">
+
+                    <div class="education-year">
+                        2026
+                    </div>
+
+                    <span class="education-institution">
+                        FACINT
+                    </span>
+
+                    <h3>
+                        Pós-graduação Lato Sensu
+                    </h3>
+
+                    <p>
+                        Especialização em Arquitetura de Software
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             CONTATO
+        ====================================================== -->
+
+        <section class="contact-section">
+
+            <div class="contact-terminal">
+
+                <div class="terminal-top">
+
+                    <span class="terminal-dot red"></span>
+                    <span class="terminal-dot yellow"></span>
+                    <span class="terminal-dot green"></span>
+
+                </div>
+
+
+                <div class="contact-content">
+
+                    <span class="section-kicker">
+                        06 / CONTATO
+                    </span>
+
+                    <h2>
+                        Vamos construir
+                        algo interessante?
+                    </h2>
+
+                    <p>
+                        Estou aberto a oportunidades, projetos,
+                        colaborações e conversas sobre tecnologia.
+                    </p>
+
+
+                    <div class="contact-actions">
+
+                        <a
+                            href="mailto:daniloasf@outlook.com"
+                            class="button button-primary"
+                        >
+                            Entrar em contato
+                            →
+                        </a>
+
+                        <a
+                            href="https://github.com/daniloferreirasousa"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="button button-secondary"
+                        >
+                            GitHub
+                        </a>
+
+                    </div>
+
+                </div>
 
             </div>
 
@@ -624,46 +1143,40 @@
     </main>
 
 
+
     <!-- =========================================================
          FOOTER
-         ========================================================= -->
+    ========================================================== -->
 
-    <footer class="footer">
+    <footer>
 
-        <div class="footer-top">
+        <div class="footer-container">
 
-            <div class="footer-brand">
-                daniloferreirasousa<span>.github.io</span>
+            <div>
+
+                <strong>
+                    danilo.dev
+                </strong>
+
+                <span>
+                    Full Stack Developer
+                </span>
+
             </div>
 
-            <div class="footer-status">
 
-                <span class="status-dot"></span>
+            <div>
 
-                SYSTEM OPERATIONAL
+                <span>
+                    © 2026 Danilo Ferreira Sousa
+                </span>
 
             </div>
-
-        </div>
-
-        <div class="footer-bottom">
-
-            <span>
-                © 2026 Danilo Ferreira Sousa
-            </span>
-
-            <span>
-                Built with HTML / CSS / JavaScript
-            </span>
 
         </div>
 
     </footer>
 
-
-    <!-- =========================================================
-         JAVASCRIPT
-         ========================================================= -->
 
     <script src="assets/js/main.js"></script>
 
